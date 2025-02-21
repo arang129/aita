@@ -21,7 +21,7 @@ def setup_aita():
         'launcher_entry': {
             'enabled': True,
             'icon_path': '/opt/tljh/hub/share/jupyterhub/ai.svg',
-            'title': 'AI',
+            'title': 'AI助教',
         },
     }
 
@@ -68,11 +68,11 @@ TEMPLATE = """\
 <!DOCTYPE html>
 <html>
 <head>
-	<title>AI Chat</title>
+	<title>AI助教</title>
 </head>
  
 <body>
-<iframe src="https://flowiseai.yunlab.synology.me/chatbot/c0489d3a-3f53-4c05-aab4-50fb5d9978e7" width="100%" height="870px" frameborder="0"></iframe>
+<iframe src="https://flowiseai.yunlab.synology.me/chatbot/2c23a2dc-d566-4de8-8ed1-a2d22491dae4" width="100%" height="870px" frameborder="0"></iframe>
 </body>
 </html>
 """
