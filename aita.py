@@ -16,7 +16,7 @@ def setup_aita():
     # Using a Unix socket prevents other users on a multi-user system from accessing
     # our server. The alternative is a TCP socket ('-p', '{port}').
     return {
-        'command': [sys.executable, '-m', 'ai', '-u', '{unix_socket}'],
+        'command': [sys.executable, '-m', 'aita', '-u', '{unix_socket}'],
         'unix_socket': True,
         'launcher_entry': {
             'enabled': True,
