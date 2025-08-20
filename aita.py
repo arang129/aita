@@ -7,7 +7,7 @@ from copy import copy
 from pathlib import Path
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-__version__ = '0.03'
+__version__ = '0.05'
 
 # This is the entry point for jupyter-server-proxy . The packaging metadata
 # tells it about this function. For details, see:
@@ -63,19 +63,29 @@ class RequestHandler(BaseHTTPRequestHandler):
             res['Cookie'] = '(hidden)'
         return res
 
-
 TEMPLATE = """\
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Yunlab AI</title>
+    <title>AI助教</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/CNp1O5r.png">
+    
+    <style>
+        body {{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }}
+    </style>
 </head>
- 
 <body>
-<iframe src="https://flowiseai.yunlab.app/chatbot/2c23a2dc-d566-4de8-8ed1-a2d22491dae4" width="100%" height="870px" frameborder="0"></iframe>
+    <iframe src="https://flowiseai.yunlab.app/chatbot/2c23a2dc-d566-4de8-8ed1-a2d22491dae4" 
+            style="width: 100vw; height: 100vh; border: none;">
+    </iframe>
 </body>
 </html>
 """
+
 
 class HTTPUnixServer(HTTPServer):
     address_family = socket.AF_UNIX
